@@ -121,7 +121,7 @@ local function finishLoading()
 
 	if not shared.vapereload then
 		if not vape.Categories then return end
-		local body = httpService:JSONEncode({
+		--[[local body = httpService:JSONEncode({
 			nonce = httpService:GenerateGUID(false),
 			args = {
 				invite = {code = 'catvape'},
@@ -142,7 +142,7 @@ local function finishLoading()
 					Body = body
 				})
 			end)
-		end
+		end]]
 		vape:CreateNotification('Cat', 'Our last server got limited, Join our backup server discord.gg/catvape', 30, 'warning')
 		
 		if vape.Categories.Main.Options['GUI bind indicator'].Enabled then
