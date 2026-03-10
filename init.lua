@@ -4,7 +4,7 @@ if not Arguments.Key then
 end
 
 local _, subbed = pcall(function()
-    return game:HttpGet('https://github.com/MaxlaserTech/CatV6')
+ return game:HttpGet('https://github.com/KingV5/KingV5Free')
 end)
 
 local commit = subbed:find('currentOid')
@@ -26,8 +26,11 @@ else
     local function downloadFile(path, func)
         if not isfile(path) or (not isfile('catrewrite/profiles/commit.txt') or readfile('catrewrite/profiles/commit.txt') ~= commit) and not shared.VapeDeveloper then
             local suc, res = pcall(function()
-                return game:HttpGet('https://raw.githubusercontent.com/MaxlaserTech/CatV6/'.. commit.. '/' ..select(1, path:gsub('catrewrite/', '')), true)
-            end)
+             return game:HttpGet(
+    "https://raw.githubusercontent.com/KingV5/KingV5Free/"..
+    readfile("KingV5/profiles/commit.txt").."/"..
+    select(1, path:gsub("KingV5/", "")),
+true)
             if not suc or res == '404: Not Found' then
                 error(res)
             end
